@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		238ACD8823CDC9C3000643F1 /* CameraMLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238ACD8723CDC9C3000643F1 /* CameraMLViewController.swift */; };
+		23C7A9BA23CE331300209A5E /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 23C7A9B923CE331300209A5E /* SqueezeNet.mlmodel */; };
 		23D426D423CBDC20007BE66D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D426D323CBDC20007BE66D /* AppDelegate.swift */; };
 		23D426D623CBDC20007BE66D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D426D523CBDC20007BE66D /* SceneDelegate.swift */; };
-		23D426D823CBDC20007BE66D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D426D723CBDC20007BE66D /* ViewController.swift */; };
+		23D426D823CBDC20007BE66D /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D426D723CBDC20007BE66D /* InitialViewController.swift */; };
 		23D426DB23CBDC20007BE66D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23D426D923CBDC20007BE66D /* Main.storyboard */; };
 		23D426DD23CBDC24007BE66D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23D426DC23CBDC24007BE66D /* Assets.xcassets */; };
 		23D426E023CBDC24007BE66D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23D426DE23CBDC24007BE66D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		238ACD8723CDC9C3000643F1 /* CameraMLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraMLViewController.swift; sourceTree = "<group>"; };
+		23C7A9B923CE331300209A5E /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
 		23D426D023CBDC20007BE66D /* MLProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MLProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23D426D323CBDC20007BE66D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23D426D523CBDC20007BE66D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		23D426D723CBDC20007BE66D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		23D426D723CBDC20007BE66D /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		23D426DA23CBDC20007BE66D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		23D426DC23CBDC24007BE66D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23D426DF23CBDC24007BE66D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +41,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		237AC67923CE31CD006A1A86 /* ML Models */ = {
+			isa = PBXGroup;
+			children = (
+				23C7A9B923CE331300209A5E /* SqueezeNet.mlmodel */,
+			);
+			path = "ML Models";
+			sourceTree = "<group>";
+		};
+		23D24C7B23CDC0E700E0A19B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				237AC67923CE31CD006A1A86 /* ML Models */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		23D24C7C23CDC0EE00E0A19B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				23D426D923CBDC20007BE66D /* Main.storyboard */,
+				23D426DE23CBDC24007BE66D /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		23D24C7D23CDC0F200E0A19B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				23D426D723CBDC20007BE66D /* InitialViewController.swift */,
+				23D426D523CBDC20007BE66D /* SceneDelegate.swift */,
+				23D426D323CBDC20007BE66D /* AppDelegate.swift */,
+				238ACD8723CDC9C3000643F1 /* CameraMLViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		23D426C723CBDC20007BE66D = {
 			isa = PBXGroup;
 			children = (
@@ -56,12 +96,10 @@
 		23D426D223CBDC20007BE66D /* MLProject */ = {
 			isa = PBXGroup;
 			children = (
-				23D426D323CBDC20007BE66D /* AppDelegate.swift */,
-				23D426D523CBDC20007BE66D /* SceneDelegate.swift */,
-				23D426D723CBDC20007BE66D /* ViewController.swift */,
-				23D426D923CBDC20007BE66D /* Main.storyboard */,
+				23D24C7D23CDC0F200E0A19B /* Controller */,
+				23D24C7C23CDC0EE00E0A19B /* View */,
+				23D24C7B23CDC0E700E0A19B /* Model */,
 				23D426DC23CBDC24007BE66D /* Assets.xcassets */,
-				23D426DE23CBDC24007BE66D /* LaunchScreen.storyboard */,
 				23D426E123CBDC24007BE66D /* Info.plist */,
 			);
 			path = MLProject;
@@ -138,7 +176,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23D426D823CBDC20007BE66D /* ViewController.swift in Sources */,
+				238ACD8823CDC9C3000643F1 /* CameraMLViewController.swift in Sources */,
+				23D426D823CBDC20007BE66D /* InitialViewController.swift in Sources */,
+				23C7A9BA23CE331300209A5E /* SqueezeNet.mlmodel in Sources */,
 				23D426D423CBDC20007BE66D /* AppDelegate.swift in Sources */,
 				23D426D623CBDC20007BE66D /* SceneDelegate.swift in Sources */,
 			);
@@ -287,6 +327,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7CS6N8JRT4;
 				INFOPLIST_FILE = MLProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,6 +346,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7CS6N8JRT4;
 				INFOPLIST_FILE = MLProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
