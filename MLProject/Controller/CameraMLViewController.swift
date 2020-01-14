@@ -14,12 +14,19 @@ import Vision
 
 class CameraMLViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
+    //OUTLETS:
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var firstLabel: UILabel!
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var secondLabel: UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMainView()
         setupCamera()
-        setupViewForOutput()
+        setupBottomView()
     }
     
     // SETUP VIEWS:
@@ -28,9 +35,13 @@ class CameraMLViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
         view.backgroundColor = .white
     }
     
+    private func setupBottomView(){
+        self.bottomView.window?.windowLevel = UIWindow.Level(.infinity)
+    }
+    
     private func setupCamera(){
         let capture = AVCaptureSession()
-        capture.sessionPreset = .photo
+//        capture.sessionPreset = .hd4K3840x2160
         
         guard let device = AVCaptureDevice.default(for: .video) else {return}
         guard let input = try? AVCaptureDeviceInput(device: device) else {return}
@@ -72,22 +83,19 @@ class CameraMLViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
     }
     
     
-    private func setupViewForOutput(){
-        let screenSize:CGRect = UIScreen.main.bounds
-        let outputView = UIView(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 100))
-        view.addSubview(outputView)
-        outputView.backgroundColor = .orange
-    }
     
     //Utils function
     private func changeLabelValue(firstValue:VNClassificationObservation, secondValue:VNClassificationObservation){
-        let firstIdentifier     = firstValue.identifier
-        let firstConfidence     = firstValue.confidence
-        let secondIdentifier    = secondValue.identifier
-        let secondConfidence    = secondValue.confidence
         
-        print("First guess = \(firstIdentifier) with \(firstConfidence) confidence ")
-        print("Second guess = \(secondIdentifier) with \(secondConfidence) confidence ")
+        let firstIdentifier     = firstValue.identifier
+        let firstConfidence     = String(format: "%.2f", Float(firstValue.confidence)*100)
+        let secondIdentifier    = secondValue.identifier
+        let secondConfidence    = String(format: "%.2f", Float(secondValue.confidence)*100)
+        
+        DispatchQueue.main.async {
+            self.secondLabel.text = "\(firstIdentifier) with \(firstConfidence) %"
+            self.firstLabel.text = "\(secondIdentifier) with \(secondConfidence) %"
+        }
         
     }
     
