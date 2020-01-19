@@ -8,24 +8,24 @@
 
 import UIKit
 import AVKit
+import Vision
 
 class InitialViewController: UIViewController {
     
     //variables
     private var hasAccess:Bool = false
+    private var buttonPressedTag:Int = 0
     
     //IBActions:
-    @IBAction func firstOptionSelected(_ sender: UIButton) {
+    @IBAction func buttonPressed(_ sender: UIButton) {
         if hasAccess{
+            buttonPressedTag = sender.tag
             performSegue(withIdentifier: "InitialToCamera", sender: self)
         }else{
             checkIfHasPermission()
         }
         
     }
-    
-    //Outlets
-    @IBOutlet weak var firstOptionButton: UIButton!
     
     
 
@@ -55,6 +55,22 @@ class InitialViewController: UIViewController {
                     self.present(alert, animated: true, completion: nil)
                 }
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "InitialToCamera"{
+            let view = segue.destination as! CameraMLViewController
+            do {
+                if buttonPressedTag == 1{
+                    view.Model = try VNCoreMLModel(for: SqueezeNet().model)
+                }else if buttonPressedTag == 2 {
+                    view.Model = try VNCoreMLModel(for: Resnet50().model)
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+
         }
     }
     

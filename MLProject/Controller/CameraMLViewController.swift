@@ -19,24 +19,27 @@ class CameraMLViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
     @IBOutlet weak var firstLabel: UILabel!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var secondLabel: UILabel!
+    @IBOutlet weak var backButton: UIButton!
+    
+    //IBActions
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
+    //Variables:
+    var Model:VNCoreMLModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMainView()
         setupCamera()
-        setupBottomView()
     }
     
     // SETUP VIEWS:
     
     private func setupMainView(){
         view.backgroundColor = .white
-    }
-    
-    private func setupBottomView(){
-        self.bottomView.window?.windowLevel = UIWindow.Level(.infinity)
     }
     
     private func setupCamera(){
@@ -64,9 +67,10 @@ class CameraMLViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         
         guard let pb:CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {return}
-        guard let MLmodel = try? VNCoreMLModel(for: SqueezeNet().model) else {return}
+        let MLModel = Model!
+
         
-        let request = VNCoreMLRequest(model: MLmodel) { (request, error) in
+        let request = VNCoreMLRequest(model: MLModel) { (request, error) in
             if error == nil{
                 guard let results = request.results as? [VNClassificationObservation] else {return}
                 self.changeLabelValue(firstValue: results[0], secondValue: results[1])
