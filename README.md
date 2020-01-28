@@ -10,6 +10,5 @@
 ## Requirements: 
 
 * Xcode 11
-* SqueezeNet Model (you need to download this model to project yourself to run this app) 
 
 
