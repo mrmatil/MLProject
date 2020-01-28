@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		23391FB123D4C268005A073D /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 23391FB023D4C268005A073D /* Resnet50.mlmodel */; };
 		238ACD8823CDC9C3000643F1 /* CameraMLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238ACD8723CDC9C3000643F1 /* CameraMLViewController.swift */; };
+		238DF68423E0D383005BABE3 /* MachineLearningModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 238DF68323E0D383005BABE3 /* MachineLearningModel.mlmodel */; };
 		23C7A9BA23CE331300209A5E /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 23C7A9B923CE331300209A5E /* SqueezeNet.mlmodel */; };
 		23D426D423CBDC20007BE66D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D426D323CBDC20007BE66D /* AppDelegate.swift */; };
 		23D426D623CBDC20007BE66D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D426D523CBDC20007BE66D /* SceneDelegate.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		23391FB023D4C268005A073D /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		238ACD8723CDC9C3000643F1 /* CameraMLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraMLViewController.swift; sourceTree = "<group>"; };
+		238DF68323E0D383005BABE3 /* MachineLearningModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MachineLearningModel.mlmodel; sourceTree = "<group>"; };
 		23C7A9B923CE331300209A5E /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
 		23D426D023CBDC20007BE66D /* MLProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MLProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23D426D323CBDC20007BE66D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 			children = (
 				23C7A9B923CE331300209A5E /* SqueezeNet.mlmodel */,
 				23391FB023D4C268005A073D /* Resnet50.mlmodel */,
+				238DF68323E0D383005BABE3 /* MachineLearningModel.mlmodel */,
 			);
 			path = "ML Models";
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				23D426D823CBDC20007BE66D /* InitialViewController.swift in Sources */,
 				23C7A9BA23CE331300209A5E /* SqueezeNet.mlmodel in Sources */,
 				23D426D423CBDC20007BE66D /* AppDelegate.swift in Sources */,
+				238DF68423E0D383005BABE3 /* MachineLearningModel.mlmodel in Sources */,
 				23391FB123D4C268005A073D /* Resnet50.mlmodel in Sources */,
 				23D426D623CBDC20007BE66D /* SceneDelegate.swift in Sources */,
 			);

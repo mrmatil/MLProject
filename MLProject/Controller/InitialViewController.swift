@@ -66,6 +66,8 @@ class InitialViewController: UIViewController {
                     view.Model = try VNCoreMLModel(for: SqueezeNet().model)
                 }else if buttonPressedTag == 2 {
                     view.Model = try VNCoreMLModel(for: Resnet50().model)
+                } else if buttonPressedTag == 3{
+                    view.Model = try VNCoreMLModel(for: MachineLearningModel().model) // self-made ML Model 
                 }
             } catch {
                 print(error.localizedDescription)

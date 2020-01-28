@@ -4,7 +4,7 @@
 //
 //  Created by Mateusz Łukasiński on 14/01/2020.
 //  Copyright © 2020 Mateusz Łukasiński. All rights reserved.
-//
+// Residual Learning
 
 import UIKit
 import AVKit
@@ -67,7 +67,7 @@ class CameraMLViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         
         guard let pb:CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {return}
-        let MLModel = Model!
+        guard let MLModel = Model else {return}
 
         
         let request = VNCoreMLRequest(model: MLModel) { (request, error) in
